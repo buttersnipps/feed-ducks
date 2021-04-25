@@ -6,6 +6,7 @@ var logger = require('morgan');
 const mongoConnect = require('./database').mongoConnect;
 var duckRouter = require('./routes/ducks');
 const cors = require('cors');
+const compression = require('compression');
 
 var app = express();
 const port =  process.env.PORT || 3000;
@@ -16,6 +17,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors())
+app.use(compression());
 
 app.use('/ducks', duckRouter);
 

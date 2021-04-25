@@ -1,0 +1,29 @@
+<mat-toolbar>
+  <span style="margin: auto;">Feed the ducks</span>
+  <button mat-stroked-button color="accent" routerLink="/allData">Get Data</button>
+</mat-toolbar>
+<form 
+  #formDirective="ngForm"
+ class="example-form" [formGroup]="duckForm"  (ngSubmit)="onSubmit()">
+      <mat-form-field class="example-full-width">
+        <mat-label>What time are the ducks fed?</mat-label>
+        <input matInput  formControlName="time">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>What food are the ducks fed?</mat-label>
+        <input matInput formControlName="food">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>What location are the ducks fed?</mat-label>
+        <input matInput formControlName="location">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>How many ducks are fed?</mat-label>
+        <input matInput formControlName="count">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>How much duck feed was used?</mat-label>
+        <input matInput formControlName="foodQuantity">
+      </mat-form-field> 
+      <button mat-raised-button color="primary" [disabled]=!duckForm.valid>Submit</button>
+</form>

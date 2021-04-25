@@ -1,0 +1,31 @@
+<mat-toolbar>
+    <span style="margin: auto;">Feed the ducks</span>
+    <button mat-stroked-button color="accent" routerLink="/">Back</button>
+  </mat-toolbar>
+  
+<table mat-table [dataSource]="duckData" class="mat-elevation-z8">
+    <!-- Position Column -->
+    <ng-container matColumnDef="time">
+      <th mat-header-cell *matHeaderCellDef> Time </th>
+      <td mat-cell *matCellDef="let element"> {{element.time}} </td>
+    </ng-container>
+    <ng-container matColumnDef="food">
+        <th mat-header-cell *matHeaderCellDef> Food </th>
+        <td mat-cell *matCellDef="let element"> {{element.food}} </td>
+      </ng-container>
+      <ng-container matColumnDef="location">
+        <th mat-header-cell *matHeaderCellDef> Location </th>
+        <td mat-cell *matCellDef="let element"> {{element.location}} </td>
+      </ng-container>
+      <ng-container matColumnDef="count">
+        <th mat-header-cell *matHeaderCellDef> Count </th>
+        <td mat-cell *matCellDef="let element"> {{element.count}} </td>
+      </ng-container>
+      <ng-container matColumnDef="foodQuality">
+        <th mat-header-cell *matHeaderCellDef> Food Quality</th>
+        <td mat-cell *matCellDef="let element"> {{element.foodQuality}} </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>

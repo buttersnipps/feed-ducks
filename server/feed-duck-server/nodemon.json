@@ -1,0 +1,6 @@
+{
+    "env": {
+        "DB_USERNAME":"sbarua",
+        "DB_PASSWORD": "toronto"
+    }
+}
